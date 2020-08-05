@@ -18,7 +18,13 @@ from django.urls import path
 
 from base import views as base_views
 
+from users import views as user_views
+from users import api as user_apis
+
 urlpatterns = [
     path('', base_views.index_view),
     path('admin/', admin.site.urls),
+    path('v0/users',user_apis.users_handler),
+    path('v0/user', user_apis.user_handler),
+    path('users', user_views.user_index),
 ]
