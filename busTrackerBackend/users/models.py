@@ -4,7 +4,7 @@ from django.db import models
 
 # Create your models here.
 
-class BTUser(models.Model):
+class BtUser(models.Model):
     
     user = models.OneToOneField(User, on_delete=models.CASCADE)
 
