@@ -40,6 +40,8 @@ INSTALLED_APPS = [
     'users',
     'base',
     'drivers',
+    'controllers',
+    'admins',
 ]
 
 MIDDLEWARE = [
