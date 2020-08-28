@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'drivers',
     'controllers',
     'admins',
+    'trips',
 ]
 
 MIDDLEWARE = [
