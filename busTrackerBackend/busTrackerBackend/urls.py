@@ -19,16 +19,19 @@ from django.urls import path, include
 from rest_framework import routers
 
 from users.api import UserViewSet
+from trips.apis.stations import StationViewSet
+from trips.apis.routes import RouteViewSet
 from base import views as base_views
 
 # Routers provide an easy way of automatically determining the URL conf.
 router = routers.DefaultRouter()
 router.register(r'users', UserViewSet)
+router.register(r'stations', StationViewSet)
+router.register(r'routes', RouteViewSet)
 
 urlpatterns = [
     path('', base_views.index_view),
     path('v0/', include(router.urls)),
     path('admin/', admin.site.urls),
-    path('api-auth/', include('rest_framework.urls', namespace='rest_framework')),
-    path('v0/trips/', include('trips.urls'))
+    path('api-auth/', include('rest_framework.urls', namespace='rest_framework'))
 ]
